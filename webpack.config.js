@@ -7,59 +7,53 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     compress: true,
-    port: 3001
+    port: 3000,
   },
   entry: { main: './src/index.js' },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'index.js'
+    filename: 'index.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-		exclude: /node_modules\/(?!(swiper|dom7)\/).*/,
+        exclude: /node_modules\/(?!(swiper|dom7)\/).*/,
         use: {
-          loader: "babel-loader",
-		    options: {
-              presets: ['@babel/preset-env'],
-            }
-        }
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.s[ac]ss$/i,
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpg|gif|jpe?g)$/,
         use: [
-          'style-loader',
-		  MiniCssExtractPlugin.loader,
-          'css-loader',
-		  'postcss-loader',
-          'sass-loader',
+          {
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/',
+            },
+            loader: 'file-loader',
+          },
         ],
       },
-	  {
-	    test: /\.(woff|woff2|eot|ttf|otf|png|svg|jpg|gif|jpe?g)$/,
-	    use: [
-	      {
-		    options: {
-		      name: "[name].[ext]",
-		      outputPath: "assets/",
-		    },
-		    loader: "file-loader"
-	      }
-	    ]
-	  },
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.css',
     }),
-	new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
     }),
-  ]
+  ],
 };
