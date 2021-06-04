@@ -1,11 +1,13 @@
-import { setRandomBackgroundColor } from './js/backgroundGenerator';
-import { setRandomQuote } from './js/quoteGenerator';
+import { loadQuote, showNextQuote } from './js/quoteGenerator';
 
 import 'core-js';
 import './scss/main.scss';
 import './js/hello.js';
 
+const nextQuoteButton = document.querySelector('.next-quote');
+
 window.onload = function() {
-  setRandomQuote();
-  setRandomBackgroundColor();
+  loadQuote();
+
+  nextQuoteButton.onclick = showNextQuote;
 };

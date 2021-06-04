@@ -1,0 +1,18 @@
+@import './../base/variables.scss';
+@import './../base/colors';
+
+.menu {
+  position: absolute;
+  margin: 0;
+  display: flex;
+  list-style: none;
+
+  &-item {
+    &__button {
+      color: $color--white;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}
