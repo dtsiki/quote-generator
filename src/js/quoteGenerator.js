@@ -1,5 +1,7 @@
 import { setRandomBackgroundColor } from './backgroundGenerator';
 import { clearFavouritesBody, getFavourites, isQuoteAlreadyFavourite, showFavourites } from './favouriteQuotes';
+import { messages } from './messages';
+import { addNotification } from './notifications';
 import { quotes } from './quotes';
 
 const nextQuoteButton = document.querySelector('.next-quote');
@@ -38,7 +40,10 @@ export const showNextQuote = () => {
 };
 
 export const addQuoteToFav = () => {
-  if (isQuoteAlreadyFavourite(quotes[currentQuoteNumber])) return;
+  if (isQuoteAlreadyFavourite(quotes[currentQuoteNumber])) {
+    addNotification(messages.ALREADY_ADDED);
+    return;
+  }
 
   let currentFavouriteQuotes = getFavourites();
 
@@ -46,6 +51,8 @@ export const addQuoteToFav = () => {
     currentFavouriteQuotes.push(quotes[currentQuoteNumber]);
     localStorage.setItem('favouriteQuotes', JSON.stringify(currentFavouriteQuotes));
   } else localStorage.setItem('favouriteQuotes', JSON.stringify([quotes[currentQuoteNumber]]));
+
+  addNotification(messages.ADDED);
 
   clearFavouritesBody();
   showFavourites();

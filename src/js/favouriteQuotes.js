@@ -1,3 +1,6 @@
+import { messages } from './messages';
+import { addNotification } from './notifications';
+
 const favouritesBody = document.querySelector('.favourites');
 const favouritesClearButton = document.querySelector('.fav-clear');
 
@@ -46,6 +49,7 @@ export const removeFromFav = (quote) => {
     localStorage.setItem('favouriteQuotes', JSON.stringify(favouriteQuotes));
     clearFavouritesBody();
     showFavourites();
+    addNotification(messages.REMOVED);
   }
 };
 
@@ -53,6 +57,7 @@ const clearFavourites = () => {
   clearFavouritesBody();
   showFavourites();
   localStorage.removeItem('favouriteQuotes');
+  addNotification(messages.CLEARED);
 };
 
 window.addEventListener('DOMContentLoaded', () => {

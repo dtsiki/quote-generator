@@ -1,0 +1,35 @@
+@import './../base/variables';
+@import './../base/colors';
+@import './../utils/mixins';
+
+.notification {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: none;
+
+  &__message {
+    padding: 15px 30px;
+    padding-right: 50px;
+    color: $color--violet;
+    background-color: $color--white;
+    border-radius: $border-radius;
+  }
+
+  &__button {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 100%;
+    cursor: pointer;
+
+    @include set-svg('../assets/icons/cross.svg', 10px, 10px, $color--violet);
+  }
+
+  &--active {
+    display: block;
+  }
+}
