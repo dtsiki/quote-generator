@@ -1,8 +1,8 @@
 import { setRandomBackgroundColor } from './backgroundGenerator';
+import { messages } from './constants/messages';
+import { quotes } from './constants/quotes';
 import { clearFavouritesBody, getFavourites, isQuoteAlreadyFavourite, showFavourites } from './favouriteQuotes';
-import { messages } from './messages';
 import { addNotification } from './notifications';
-import { quotes } from './quotes';
 
 const nextQuoteButton = document.querySelector('.next-quote');
 const favQuoteButton = document.querySelector('.fav-quote');

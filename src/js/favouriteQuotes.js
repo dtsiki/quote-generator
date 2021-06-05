@@ -1,4 +1,4 @@
-import { messages } from './messages';
+import { messages } from './constants/messages';
 import { addNotification } from './notifications';
 
 const favouritesBody = document.querySelector('.favourites');
