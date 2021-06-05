@@ -10,13 +10,31 @@
 	<nav class="nav">
 		<ul class="menu">
 			<li class="menu-item">
+				<button class="menu-item__button fav-quote">Add quote to favourite</button>
+			</li>
+			<li class="menu-item">
 				<button class="menu-item__button next-quote">Next quote</button>
+			</li>
+			<li class="menu-item">
+				<button class="menu-item__button modal-open">Show favourite</button>
 			</li>
 		</ul>
 	</nav>
 	<div class="container">
 		<div class="quote">
 			<div class="quote__body"></div>
+		</div>
+	</div>
+	<div class="modal">
+		<button class="modal-close modal-button">
+			<span class="modal-button__label">Close favourites</span>
+		</button>
+		<div class="modal-body">
+			<h2 class="modal__title">Favourites quotes</h2>
+			<div class="modal-content">
+				<ul class="favourites"></ul>
+				<button class="button button--primary fav-clear">Clear Favourites</button>
+			</div>
 		</div>
 	</div>
 <script src="index.js" type="text/javascript"></script>
