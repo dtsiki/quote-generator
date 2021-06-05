@@ -1,0 +1,52 @@
+@import './../base/variables';
+@import './../base/colors';
+@import './../utils/mixins';
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  display: none;
+  width: 100%;
+  max-width: 700px;
+  transform: translate(-50%, -50%);
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &--active {
+    display: block;
+  }
+
+  &-body {
+    margin: 0;
+    padding: 40px;
+    list-style: none;
+    color: $color--violet;
+    background-color: $color--white;
+    border-radius: 5px;
+    box-shadow: 0 0 60px 0 $color--white-violet;
+  }
+
+  &-button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: $color--violet;
+    border: 0;
+    border-radius: 100%;
+    cursor: pointer;
+
+    &__label {
+      @include visually-hidden;
+    }
+
+    @include set-svg('../assets/icons/cross.svg', 15px, 15px);
+  }
+}

@@ -1,5 +1,6 @@
-@import './../base/variables.scss';
+@import './../base/variables';
 @import './../base/colors';
+@import './../utils/mixins';
 
 .menu {
   position: absolute;

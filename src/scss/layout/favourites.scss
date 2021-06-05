@@ -1,0 +1,42 @@
+@import './../base/variables';
+@import './../base/colors';
+@import './../utils/mixins';
+
+.favourites {
+  margin: 0;
+  list-style: none;
+
+  &-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+
+    + .favourites-item {
+      margin-top: 15px;
+    }
+  }
+
+  &-quote {
+    padding-right: 40px;
+  }
+
+  &-button {
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    cursor: pointer;
+
+    @include set-svg('../assets/icons/bin.svg', 20px, 20px);
+
+    &__label {
+      @include visually-hidden;
+    }
+  }
+
+  &-message {
+    text-align: center;
+  }
+}

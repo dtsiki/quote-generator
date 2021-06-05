@@ -1,0 +1,13 @@
+@import './../base/variables';
+@import './../base/colors';
+
+.button {
+  &--primary {
+    padding: 15px 20px;
+    color: $color--white;
+    background-color: $color--violet;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
