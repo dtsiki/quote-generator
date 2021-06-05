@@ -7,8 +7,8 @@
   white-space: nowrap;
 }
 
-@mixin set-svg($path, $width, $height) {
-  background-color: transparent;
+@mixin set-svg($path, $width, $height, $backgroundColor) {
+  background-color: $backgroundColor;
   background-image: url($path);
   background-repeat: no-repeat;
   background-position: center;

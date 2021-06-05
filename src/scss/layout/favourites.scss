@@ -29,7 +29,7 @@
     border: 0;
     cursor: pointer;
 
-    @include set-svg('../assets/icons/bin.svg', 20px, 20px);
+    @include set-svg('../assets/icons/bin.svg', 20px, 20px, $color--white);
 
     &__label {
       @include visually-hidden;
