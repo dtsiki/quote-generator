@@ -1,13 +1,5 @@
-import { loadQuote, showNextQuote } from './js/quoteGenerator';
-
 import 'core-js';
 import './scss/main.scss';
-import './js/hello.js';
-
-const nextQuoteButton = document.querySelector('.next-quote');
-
-window.onload = function() {
-  loadQuote();
-
-  nextQuoteButton.onclick = showNextQuote;
-};
+import './js/modal.js';
+import './js/quoteGenerator.js';
+import './js/favouriteQuotes.js';
