@@ -3,6 +3,7 @@
 @import './../base/typography';
 @import './../base/colors';
 @import './../base/variables';
+@import './../utils/mixins';
 
 :root {
   box-sizing: border-box;
@@ -46,4 +47,8 @@ fieldset {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.vusially-hidden {
+  @include visually-hidden;
 }
