@@ -28,7 +28,7 @@
     list-style: none;
     color: $color--violet;
     background-color: $color--white;
-    border-radius: 5px;
+    border-radius: $border-radius;
     box-shadow: 0 0 60px 0 $color--white-violet;
   }
 
