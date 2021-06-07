@@ -11,7 +11,7 @@ const quoteBody = document.querySelector('.quote__body');
 const quotesLength = quotes.length;
 let currentQuoteNumber = [];
 
-export const setQuoteBody = (content) => {
+const setQuoteBody = (content) => {
   quoteBody.innerHTML = content;
 };
 
@@ -23,29 +23,29 @@ const getRandomQuoteNumber = () => {
   return getRandomNumber(0, quotesLength);
 };
 
-export const setRandomQuote = () => {
+const setRandomQuote = () => {
   const quoteNumber = getRandomQuoteNumber();
   currentQuoteNumber = quoteNumber;
   setQuoteBody(quotes[quoteNumber]);
 };
 
-export const loadQuote = () => {
+const loadQuote = () => {
   setRandomQuote();
   setRandomBackgroundColor();
 };
 
-export const showNextQuote = () => {
+const showNextQuote = () => {
   setQuoteBody('');
   loadQuote();
 };
 
-export const addQuoteToFav = () => {
+const addQuoteToFav = () => {
   if (isQuoteAlreadyFavourite(quotes[currentQuoteNumber])) {
     addNotification(messages.ALREADY_ADDED);
     return;
   }
 
-  let currentFavouriteQuotes = getFavourites();
+  const currentFavouriteQuotes = getFavourites();
 
   if (currentFavouriteQuotes) {
     currentFavouriteQuotes.push(quotes[currentQuoteNumber]);
