@@ -38,4 +38,4 @@ In the project directory run:
 npm run dev
 ```
 
-Then open [http://localhost:3000](http://localhost:3000) to view to do in your browser. You can change port in config file.
+Then open [http://localhost:3000](http://localhost:3000) to view project in your browser. You can change port in config file.
