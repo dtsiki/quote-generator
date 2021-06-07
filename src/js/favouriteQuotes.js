@@ -16,21 +16,27 @@ export const clearFavouritesBody = () => {
 export const showFavourites = () => {
   const favouriteQuotes = getFavourites();
 
-  if (!favouriteQuotes) {
-    favouritesBody.innerHTML += `<li class="favourites-message">You don't have any favourite quote</li>`;
+  if (!favouriteQuotes?.length) {
+    favouritesClearButton.classList.add('button--disabled');
+    favouritesClearButton.disabled = true;
+    favouritesBody.innerHTML = `<li class="favourites-message">You don't have any favourite quote</li>`;
     return;
   }
 
-  favouriteQuotes.map((quote) => {
+  favouritesClearButton.classList.remove('button--disabled');
+  favouritesClearButton.disabled = false;
+  favouriteQuotes.forEach((quote) => {
     favouritesBody.innerHTML += `
       <li class="favourites-item">
-        <button class="favourites-button" quote="${quote}">
+        <button class="favourites-button" quote="${quote}" onclick="">
           <span class="favourites-button__label">Remove</span>
         </button>
         <span class="favourites-quote">${quote}</span>
       </li>
     `;
   });
+
+  addRemoveButtonEvents();
 };
 
 export const getFavourites = () => {
@@ -41,7 +47,27 @@ export const getFavourites = () => {
   }
 };
 
-export const removeFromFav = (quote) => {
+const addRemoveButtonEvents = () => {
+  const removeButtons = document.querySelectorAll('.favourites-button');
+
+  removeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      removeFromFav(button.getAttribute('quote'));
+    });
+  });
+};
+
+const clearRemoveButtonEvents = () => {
+  const removeButtons = document.querySelectorAll('.favourites-button');
+
+  removeButtons.forEach((button) => {
+    button.removeEventListener('click', () => {
+      removeFromFav();
+    });
+  });
+};
+
+const removeFromFav = (quote) => {
   const favouriteQuotes = getFavourites();
 
   if (favouriteQuotes) {
@@ -54,19 +80,19 @@ export const removeFromFav = (quote) => {
 };
 
 const clearFavourites = () => {
+  const favouriteQuotes = getFavourites();
+
+  if (!favouriteQuotes?.length) {
+    addNotification(messages.EMPTY);
+    return;
+  }
   clearFavouritesBody();
-  showFavourites();
   localStorage.removeItem('favouriteQuotes');
   addNotification(messages.CLEARED);
+  clearRemoveButtonEvents();
+  showFavourites();
 };
 
 window.addEventListener('DOMContentLoaded', () => {
   favouritesClearButton.onclick = clearFavourites;
-  let removeButtons = document.querySelectorAll('.favourites-button');
-
-  removeButtons.forEach((button) => {
-    button.onclick = () => {
-      removeFromFav(button.getAttribute('quote'));
-    };
-  });
 });
