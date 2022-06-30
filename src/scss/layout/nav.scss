@@ -1,7 +1,51 @@
-@import './../base/variables.scss';
+@import './../base/variables';
 
 .nav {
+  position: absolute;
+  bottom: 30px;
   display: flex;
   width: 100%;
   justify-content: center;
+
+  &__list {
+    margin: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-top: 10px;
+
+    + .nav__item {
+      margin-left: 10px;
+    }
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    color: $color--white;
+    background-color: transparent;
+    border: 0;
+    border-radius: 100%;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: .8;
+    }
+
+    &--fav-quote {
+      @include set-svg('../assets/icons/heart.svg', 20px, 20px, transparent);
+    }
+
+    &--next-quote {
+      @include set-svg('../assets/icons/repeat.svg', 20px, 20px, transparent);
+    }
+
+    &--show-fav {
+      @include set-svg('../assets/icons/bookmark.svg', 20px, 20px, transparent);
+    }
+  }
 }

@@ -8,20 +8,26 @@
 </head>
 <body>
 	<nav class="nav">
-		<ul class="menu">
-			<li class="menu-item">
-				<button class="menu-item__button menu-item__button--fav-quote fav-quote">
-					<span class="vusially-hidden">Add quote to favourite</span>
+		<ul class="nav__list">
+			<li class="nav__item">
+				<button class="nav__button nav__button--next-quote next-quote">
+					<span class="vusially-hidden">
+						Next quote
+					</span>
 				</button>
 			</li>
-			<li class="menu-item">
-				<button class="menu-item__button menu-item__button--show-fav modal-open">
-					<span class="vusially-hidden">Show favourite</span>
+			<li class="nav__item">
+				<button class="nav__button nav__button--fav-quote fav-quote">
+					<span class="vusially-hidden">
+						Save
+					</span>
 				</button>
 			</li>
-			<li class="menu-item">
-				<button class="menu-item__button menu-item__button--next-quote next-quote">
-					<span class="vusially-hidden">Next quote</span>
+			<li class="nav__item">
+				<button class="nav__button nav__button--show-fav modal-open">
+					<span class="vusially-hidden">
+						Show saved
+					</span>
 				</button>
 			</li>
 		</ul>
@@ -33,14 +39,20 @@
 	</div>
 	<div class="modal">
 		<button class="modal-close modal-button">
-			<span class="modal-button__label">Close favourites</span>
+			<span class="modal-button__label">
+				Close favourites
+			</span>
 		</button>
 		<div class="modal-body">
-			<h2 class="modal__title">Favourites quotes</h2>
+			<h2 class="modal__title">
+				Favourites quotes
+			</h2>
 			<div class="modal-content">
 				<ul class="favourites"></ul>
 				<div class="modal-footer">
-					<button class="button button--primary fav-clear">Delete all</button>
+					<button class="button button--primary fav-clear">
+						Delete all
+					</button>
 				</div>
 			</div>
 		</div>
@@ -48,7 +60,9 @@
 	<div class="notification">
 		<div class="notification__message"></div>
 		<button class="notification__button">
-			<span class="vusially-hidden">Hide notification</span>
+			<span class="vusially-hidden">
+				Hide notification
+			</span>
 		</button>
 	</div>
 <script src="index.js" type="text/javascript"></script>
