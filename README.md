@@ -1,22 +1,25 @@
 # Quote generator
 ### Overview
-Tiny quote generator built with the HTML, CSS (SCSS) and pure JavaScript.
+If you're looking for positive quotes and motivating sayings to boost your mood, this tiny quote generator will help you look on the bright side even when your day starts out on the totally wrong foot 🙃
+
+Generator built with the HTML, CSS (SCSS) and pure JavaScript.
+
+Hope you like it and have a good day! ✌️
 
 ## Features
 * Generate random quote and random background color for every quote
 * Add quote to favourites
-* Show favourites quotes
+* Show saved quotes
 * Remove quote from favourites
-* Delete all selected quotes from favourites
-* Show notifications: quote added, quote removed from favourites, etc
+* Delete all saved quotes
+* Showing notifications
 
-![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-main-screen.png "Quote generator main screen")
+![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-main-screen.png "Random quote")
 
-![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-main-screen-4.png "Quote generator main screen another quote")
+![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-notification.png "Notification")
 
-![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-main-screen-3.png "Quote generator main screen and another one quote")
 
-![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-modal.png "Quote generator favourites quotes pop up")
+![alt text](https://github.com/dtsiki/quote-generator/blob/master/previews/quote-generator-modal.png "Pop up with favs")
 
 ### Installation
 Start by cloning the repository:
