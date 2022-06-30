@@ -27,6 +27,7 @@ body {
   font-size: $font-size;
   color: $text-color;
   background-color: $bg-color;
+  transition: background-color .5s ease;
 }
 
 h1,
