@@ -1,7 +1,7 @@
 export const messages = {
-  ADDED: 'Quote added to your favourites',
-  REMOVED: 'Quote removed from your favourites',
-  ALREADY_ADDED: 'Quote already added to favourites',
-  CLEARED: 'Favourites quotes list has been cleared',
+  ADDED: 'Quote saved',
+  REMOVED: 'Quote removed',
+  ALREADY_ADDED: 'Yay, quote already saved',
+  CLEARED: 'Uou, favourites has been cleared',
   EMPTY: 'Favourites list already empty',
 };
