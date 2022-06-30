@@ -42,6 +42,7 @@ const showNextQuote = () => {
 const addQuoteToFav = () => {
   if (isQuoteAlreadyFavourite(quotes[currentQuoteNumber])) {
     addNotification(messages.ALREADY_ADDED);
+
     return;
   }
 
@@ -50,7 +51,9 @@ const addQuoteToFav = () => {
   if (currentFavouriteQuotes) {
     currentFavouriteQuotes.push(quotes[currentQuoteNumber]);
     localStorage.setItem('favouriteQuotes', JSON.stringify(currentFavouriteQuotes));
-  } else localStorage.setItem('favouriteQuotes', JSON.stringify([quotes[currentQuoteNumber]]));
+  } else {
+    localStorage.setItem('favouriteQuotes', JSON.stringify([quotes[currentQuoteNumber]]));
+  }
 
   addNotification(messages.ADDED);
 

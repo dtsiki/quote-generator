@@ -6,7 +6,10 @@ const favouritesClearButton = document.querySelector('.fav-clear');
 
 export const isQuoteAlreadyFavourite = (quote) => {
   const favouriteQuotes = getFavourites();
-  if (favouriteQuotes) return favouriteQuotes.indexOf(quote) > -1;
+
+  if (favouriteQuotes) {
+    return favouriteQuotes.indexOf(quote) > -1;
+  }
 };
 
 export const clearFavouritesBody = () => {
@@ -19,12 +22,14 @@ export const showFavourites = () => {
   if (!favouriteQuotes?.length) {
     favouritesClearButton.classList.add('button--disabled');
     favouritesClearButton.disabled = true;
-    favouritesBody.innerHTML = `<li class="favourites-message">You don't have any favourite quote</li>`;
+    favouritesBody.innerHTML = `<li class="favourites-message">You don't have any favourite quotes</li>`;
+
     return;
   }
 
   favouritesClearButton.classList.remove('button--disabled');
   favouritesClearButton.disabled = false;
+
   favouriteQuotes.forEach((quote) => {
     favouritesBody.innerHTML += `
       <li class="favourites-item">
@@ -84,8 +89,10 @@ const clearFavourites = () => {
 
   if (!favouriteQuotes?.length) {
     addNotification(messages.EMPTY);
+
     return;
   }
+
   clearFavouritesBody();
   localStorage.removeItem('favouriteQuotes');
   addNotification(messages.CLEARED);
