@@ -9,8 +9,12 @@
   margin: auto;
   display: none;
   width: 100%;
-  max-width: 700px;
+  max-width: 90%;
   transform: translate(-50%, -50%);
+
+  @include sm {
+    max-width: 700px;
+  }
 
   &__title {
     margin-bottom: 20px;
@@ -24,12 +28,16 @@
 
   &-body {
     margin: 0;
-    padding: 40px;
+    padding: 20px;
     list-style: none;
     color: $color--violet;
     background-color: $color--white;
     border-radius: $border-radius;
     box-shadow: 0 0 60px 0 $color--white-violet;
+
+    @include sm {
+      padding: 40px;
+    }
   }
 
   &-footer {

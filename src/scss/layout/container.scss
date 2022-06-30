@@ -1,9 +1,15 @@
-@import './../base/variables.scss';
+@import './../base/variables';
+@import './../utils/breakpoints';
 
 .container {
+  padding: 0 20px;
   display: flex;
   width: 100%;
   height: calc(100vh - 60px);
   justify-content: center;
   align-items: center;
+
+  @include sm {
+    padding: 0;
+  }
 }
