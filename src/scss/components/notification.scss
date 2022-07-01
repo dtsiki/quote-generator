@@ -1,18 +1,27 @@
 @import './../base/variables';
 @import './../base/colors';
 @import './../utils/mixins';
+@import './../utils/breakpoints';
 
 .notification {
   position: absolute;
+  right: 10px;
   bottom: 10px;
   left: 10px;
   display: none;
 
+  @include sm {
+    right: 10px;
+    left: unset;
+    min-width: 300px;
+  }
+
   &__message {
-    padding: 15px 30px;
+    padding: 15px;
     padding-right: 50px;
-    color: $color--violet;
-    background-color: $color--white;
+    color: $color--black;
+    background-color: rgba($color--white, .9);
+    border: 1px solid $color--grey;
     border-radius: $border-radius;
   }
 
@@ -26,7 +35,7 @@
     border-radius: 100%;
     cursor: pointer;
 
-    @include set-svg('../assets/icons/cross.svg', 10px, 10px, $color--violet);
+    @include set-svg('../assets/icons/cross.svg', 15px, 15px, transparent);
   }
 
   &--active {
