@@ -6,26 +6,29 @@
   margin: 0;
   list-style: none;
 
-  &-item {
+  &__item {
     position: relative;
+    padding: 10px 0 20px;
     display: flex;
     align-items: center;
     font-size: 16px;
+    border-bottom: 1px solid $color--grey-lighter;
 
     @include sm {
       font-size: 20px;
     }
 
-    + .favourites-item {
-      margin-top: 15px;
+    + .favourites__item {
+      margin-top: 10px;
     }
   }
 
-  &-quote {
+  &__quote {
     padding-right: 40px;
+    color: $color--black;
   }
 
-  &-button {
+  &__button {
     position: absolute;
     right: 0;
     width: 30px;
@@ -33,14 +36,15 @@
     border: 0;
     cursor: pointer;
 
-    @include set-svg('../assets/icons/bin.svg', 20px, 20px, $color--white);
+    @include set-svg('../assets/icons/cross.svg', 20px, 20px, transparent);
 
     &__label {
       @include visually-hidden;
     }
   }
 
-  &-message {
+  &__message {
     text-align: center;
+    color: $color--grey-dark;
   }
 }

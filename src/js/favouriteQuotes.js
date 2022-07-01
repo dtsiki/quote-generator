@@ -22,7 +22,7 @@ export const showFavourites = () => {
   if (!favouriteQuotes?.length) {
     favouritesClearButton.classList.add('button--disabled');
     favouritesClearButton.disabled = true;
-    favouritesBody.innerHTML = `<li class="favourites-message">You don't have any favourite quotes</li>`;
+    favouritesBody.innerHTML = `<li class="favourites__message">You don't have any favourite quotes</li>`;
 
     return;
   }
@@ -32,11 +32,11 @@ export const showFavourites = () => {
 
   favouriteQuotes.forEach((quote) => {
     favouritesBody.innerHTML += `
-      <li class="favourites-item">
-        <button class="favourites-button" quote="${quote}" onclick="">
-          <span class="favourites-button__label">Remove</span>
+      <li class="favourites__item">
+        <button class="favourites__button" quote="${quote}" onclick="">
+          <span class="visially-hidden">Remove</span>
         </button>
-        <span class="favourites-quote">${quote}</span>
+        <span class="favourites__quote">${quote}</span>
       </li>
     `;
   });
@@ -53,7 +53,7 @@ export const getFavourites = () => {
 };
 
 const addRemoveButtonEvents = () => {
-  const removeButtons = document.querySelectorAll('.favourites-button');
+  const removeButtons = document.querySelectorAll('.favourites__button');
 
   removeButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -63,7 +63,7 @@ const addRemoveButtonEvents = () => {
 };
 
 const clearRemoveButtonEvents = () => {
-  const removeButtons = document.querySelectorAll('.favourites-button');
+  const removeButtons = document.querySelectorAll('.favourites__button');
 
   removeButtons.forEach((button) => {
     button.removeEventListener('click', () => {

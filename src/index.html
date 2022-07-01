@@ -11,21 +11,21 @@
 		<ul class="nav__list">
 			<li class="nav__item">
 				<button class="nav__button nav__button--next-quote next-quote">
-					<span class="vusially-hidden">
+					<span class="visially-hidden">
 						Next quote
 					</span>
 				</button>
 			</li>
 			<li class="nav__item">
 				<button class="nav__button nav__button--fav-quote fav-quote">
-					<span class="vusially-hidden">
+					<span class="visially-hidden">
 						Save
 					</span>
 				</button>
 			</li>
 			<li class="nav__item">
 				<button class="nav__button nav__button--show-fav modal-open">
-					<span class="vusially-hidden">
+					<span class="visially-hidden">
 						Show saved
 					</span>
 				</button>
@@ -38,20 +38,20 @@
 		</div>
 	</div>
 	<div class="modal">
-		<button class="modal-close modal-button">
-			<span class="modal-button__label">
-				Close favourites
-			</span>
-		</button>
-		<div class="modal-body">
+		<div class="modal__wrapper">
 			<h2 class="modal__title">
 				Favourites quotes
 			</h2>
-			<div class="modal-content">
-				<ul class="favourites"></ul>
-				<div class="modal-footer">
-					<button class="button button--primary fav-clear">
+			<div class="modal__body">
+				<div class="modal__content">
+					<ul class="favourites"></ul>
+				</div>
+				<div class="modal__footer">
+					<button class="button button--secondary fav-clear">
 						Delete all
+					</button>
+					<button class="button button--primary modal-close">
+						Close
 					</button>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 	<div class="notification">
 		<div class="notification__message"></div>
 		<button class="notification__button">
-			<span class="vusially-hidden">
+			<span class="visially-hidden">
 				Hide notification
 			</span>
 		</button>

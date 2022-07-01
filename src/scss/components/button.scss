@@ -2,11 +2,23 @@
 @import './../base/colors';
 
 .button {
+  display: inline-block;
+  min-width: 100px;
+  border: 1px solid transparent;
+
   &--primary {
     padding: 15px 20px;
     color: $color--white;
     background-color: $color--violet;
-    border: 0;
+    border-radius: $border-radius;
+    cursor: pointer;
+  }
+
+  &--secondary {
+    padding: 15px 20px;
+    color: $color--grey-dark;
+    background-color: transparent;
+    border-color: $color--grey-dark;
     border-radius: $border-radius;
     cursor: pointer;
   }
@@ -14,7 +26,11 @@
   &--disabled {
     color: $color--black;
     background-color: $color--white-darker;
-    border: 1px solid $color--white-violet;
+    border-color: $color--white-violet;
     cursor: not-allowed;
+  }
+
+  + .button {
+    margin-left: 20px;
   }
 }
