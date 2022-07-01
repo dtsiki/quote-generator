@@ -1,11 +1,17 @@
 @import './../base/variables';
+@import './../utils/breakpoints';
 
 .nav {
   position: absolute;
-  bottom: 30px;
+  top: 0;
   display: flex;
   width: 100%;
   justify-content: center;
+
+  @include sm {
+    top: unset;
+    bottom: 30px;
+  }
 
   &__list {
     margin: 0;
