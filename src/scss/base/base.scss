@@ -4,6 +4,7 @@
 @import './../base/colors';
 @import './../base/variables';
 @import './../utils/mixins';
+@import './../utils/breakpoints';
 
 :root {
   box-sizing: border-box;
@@ -27,7 +28,10 @@ body {
   font-size: $font-size;
   color: $text-color;
   background-color: $bg-color;
-  transition: background-color .5s ease;
+
+  @include sm {
+    transition: background-color .5s ease;
+  }
 }
 
 h1,
