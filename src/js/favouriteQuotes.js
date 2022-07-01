@@ -34,7 +34,7 @@ export const showFavourites = () => {
     favouritesBody.innerHTML += `
       <li class="favourites__item">
         <button class="favourites__button" quote="${quote}" onclick="">
-          <span class="visially-hidden">Remove</span>
+          <span class="visually-hidden">Remove</span>
         </button>
         <span class="favourites__quote">${quote}</span>
       </li>
