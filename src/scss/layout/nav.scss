@@ -3,7 +3,7 @@
 
 .nav {
   position: absolute;
-  top: 0;
+  top: 10px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -20,7 +20,8 @@
   }
 
   &__item {
-    margin-top: 10px;
+    display: flex;
+    align-items: center;
 
     + .nav__item {
       margin-left: 10px;

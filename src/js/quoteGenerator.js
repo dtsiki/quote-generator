@@ -1,4 +1,4 @@
-import { setRandomBackgroundColor } from './backgroundGenerator';
+import { resetBackgroundColor, setRandomBackgroundColor } from './background';
 import { messages } from './constants/messages';
 import { quotes } from './constants/quotes';
 import { clearFavouritesBody, getFavourites, isQuoteAlreadyFavourite, showFavourites } from './favouriteQuotes';
@@ -7,9 +7,11 @@ import { addNotification } from './notifications';
 const nextQuoteButton = document.querySelector('.next-quote');
 const favQuoteButton = document.querySelector('.fav-quote');
 const quoteBody = document.querySelector('.quote__body');
+const toggle = document.querySelector('.toggle-checkbox');
 
 const quotesLength = quotes.length;
 let currentQuoteNumber = [];
+let isRandomBackgroundEnabled = false;
 
 const setQuoteBody = (content) => {
   quoteBody.innerHTML = content;
@@ -31,7 +33,8 @@ const setRandomQuote = () => {
 
 const loadQuote = () => {
   setRandomQuote();
-  setRandomBackgroundColor();
+
+  isRandomBackgroundEnabled && setRandomBackgroundColor();
 };
 
 const showNextQuote = () => {
@@ -67,4 +70,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
   nextQuoteButton.onclick = showNextQuote;
   favQuoteButton.onclick = addQuoteToFav;
+
+  isRandomBackgroundEnabled = toggle.checked;
+});
+
+toggle.addEventListener('change', (e) => {
+  isRandomBackgroundEnabled = e.target.checked;
+
+  isRandomBackgroundEnabled ? setRandomBackgroundColor() : resetBackgroundColor();
 });

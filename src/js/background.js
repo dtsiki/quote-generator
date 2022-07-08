@@ -3,3 +3,7 @@ export const setRandomBackgroundColor = () => {
 
   document.body.style.backgroundColor = '#' + randomColor;
 };
+
+export const resetBackgroundColor = () => {
+  document.body.style.backgroundColor = '#8a2be2';
+};
